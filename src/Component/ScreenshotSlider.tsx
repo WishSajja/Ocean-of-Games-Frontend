@@ -35,11 +35,11 @@ const GameScreenshotSlider = ({ screenshots }: Props) => {
         transform={`translateX(-${index * 100}%)`}
         transition="transform 0.35s ease"
       >
-        {screenshots.map((src, i) => (
+        {screenshots.map((src, index) => (
           <Image
-            key={`${src}-${i}`}
+            key={`${src}-${index}`}
             src={src}
-            alt={`Screenshot ${i + 1}`}
+            alt={`Screenshot ${index + 1}`}
             flex="0 0 100%"
             w="100%"
             h="100%"
