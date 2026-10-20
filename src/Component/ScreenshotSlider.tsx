@@ -87,15 +87,15 @@ const GameScreenshotSlider = ({ screenshots }: Props) => {
             transform="translateX(-50%)"
             gap="1"
           >
-            {screenshots.map((_, index) => (
+            {screenshots.map((_, indx) => (
               <Box
-                key={index}
+                key={indx}
                 as="button"
-                onClick={(e: React.MouseEvent) => go(e, index)}
+                onClick={(e: React.MouseEvent) => go(e, indx)}
                 w={index === index ? "16px" : "6px"}
                 h="6px"
                 borderRadius="full"
-                bg={index === index ? "white" : "whiteAlpha.600"}
+                bg={indx === index ? "white" : "whiteAlpha.600"}
                 transition="all 0.2s"
               />
             ))}
