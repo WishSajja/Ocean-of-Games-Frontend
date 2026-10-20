@@ -7,14 +7,14 @@ interface Props {
 }
 
 const GameScreenshotSlider = ({ screenshots }: Props) => {
-  const [index, setIndex] = useState(0);
+  const [index, setIndexing] = useState(0);
 
   if (screenshots.length === 0) return null;
 
   const go = (e: React.MouseEvent, newIndex: number) => {
     e.stopPropagation();
     e.preventDefault();
-    setIndex((newIndex + screenshots.length) % screenshots.length);
+    setIndexing((newIndex + screenshots.length) % screenshots.length);
   };
 
   return (
