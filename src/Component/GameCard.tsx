@@ -16,8 +16,8 @@ const GameCard = ({ games }: Props) => {
       className="group"
       overflow="hidden"
       position="relative"
-      transition="transform 0.2s"
-      _hover={{ transform: "translateY(-5px)", shadow: "md" }}
+      transition="transform 0.2s ease, box-shadow 0.2s ease"
+      _hover={{ transform: "scale(1.04)", shadow: "xl" }}
     >
       <Box position="relative" height="190px" overflow="hidden">
         <Image

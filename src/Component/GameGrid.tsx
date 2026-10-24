@@ -19,6 +19,7 @@ const GameGrid = ({ GameQuery }: GameGridProps) => {
   if (error) return <Text className="text-danger">{error}</Text>;
   return (
     <>
+      {!data && <Text>Oops no Games</Text>}
       {/* gap="row-gap column-gap"
        ↓       ↓
       50px    30px */}
@@ -34,6 +35,23 @@ const GameGrid = ({ GameQuery }: GameGridProps) => {
               <GameCardSkeleton />
             </GameCardContainer>
           ))}
+        {data.length === 0 && (
+          <Text
+            textWrap="nowrap"
+            fontSize="5xl"
+            fontWeight="bolder"
+            textAlign="center"
+            animation="fade-in 500ms ease-in"
+            // css={{
+            //   "@keyframes fadeIn": {
+            //     from: { opacity: 0 },
+            //     to: { opacity: 1 },
+            //   },
+            // }}
+          >
+            Oops no Games
+          </Text>
+        )}
         {data.map((game) => (
           <GameCardContainer key={game.id}>
             <GameCard games={game} />
